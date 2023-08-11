@@ -18,7 +18,6 @@ SHA256 (Base16)<br>
 </main>
 
 <script type="module">
-import * as sec from "https://code4fukui.github.io/sec.js/sec.js";
 import { Base32 } from "https://code4fukui.github.io/Base32/Base32.js";
 import { Base16 } from "https://code4fukui.github.io/Base16/Base16.js";
 import { waitDropFiles } from "https://js.sabae.cc/waitDropFiles.js";
@@ -31,7 +30,6 @@ for (;;) {
   const files = await waitDropFiles(document.body);
   const file = files[0]; // ドロップできるファイルは1つだけ
   const bin = await waitFileRead(file.file);
-
   len.value = addComma(bin.length);
 
   const hash = SHA512.digest(bin);
