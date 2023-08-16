@@ -15,6 +15,10 @@ SHA256 (Base32)<br>
 <textarea id=sha256_32></textarea><br>
 SHA256 (Base16)<br>
 <textarea id=sha256></textarea><br>
+MD5 (Base32)<br>
+<textarea id=md5_32></textarea><br>
+MD5 (Base16)<br>
+<textarea id=md5></textarea><br>
 </main>
 
 <script type="module">
@@ -23,6 +27,7 @@ import { Base16 } from "https://code4fukui.github.io/Base16/Base16.js";
 import { waitDropFiles } from "https://js.sabae.cc/waitDropFiles.js";
 import { SHA512 } from "https://code4fukui.github.io/SHA512/SHA512.js"
 import { SHA256 } from "https://code4fukui.github.io/SHA256/SHA256.js";
+import { MD5 } from "https://code4fukui.github.io/MD5/MD5.js";
 import { addComma } from "https://js.sabae.cc/addComma.js";
 import { waitFileRead } from "https://js.sabae.cc/waitFileRead.js";
 
@@ -39,13 +44,22 @@ for (;;) {
   const hash2 = await SHA256.digest(bin);
   sha256_32.value = Base32.encode(hash2);
   sha256.value = Base16.encode(hash2).toUpperCase();
+
+  const hash3 = await SHA256.digest(bin);
+  md5_32.value = Base32.encode(hash3);
+  md5.value = Base16.encode(hash3).toUpperCase();
 }
 </script>
 
 <hr>
+Reference:
+<a href=https://ja.wikipedia.org/wiki/SHA-2>SHA-2 (SHA512 / SHA256) - Wikipedia</a> /
+<a href=https://ja.wikipedia.org/wiki/MD5#%E5%AE%89%E5%85%A8%E6%80%A7>MD5 安全性に問題あり - Wikipedia</a>
+<br>
 Lib:
 <a href=https://github.com/code4fukui/SHA512>SHA512</a> /
 <a href=https://github.com/code4fukui/SHA256>SHA256</a> /
+<a href=https://github.com/code4fukui/MD5>MD5</a> /
 <a href=https://github.com/code4fukui/Base32>Base32</a> / 
 <a href=https://github.com/code4fukui/Base16>Base16</a><br>
 <a href=https://github.com/code4fukui/file2hash/>src on GitHub</a><br>
