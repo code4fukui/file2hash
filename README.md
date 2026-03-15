@@ -1,5 +1,7 @@
 # file2hash
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 A web application that allows users to calculate various hashes for files, including SHA-512, SHA-256, SHAKE-128, and MD5.
 
 ## Demo
